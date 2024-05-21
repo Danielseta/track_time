@@ -43,29 +43,22 @@ class Dashboard extends StatelessWidget {
                       ),
                     ),
                   ),
-                  // Greeting and clock text with spacing
+                  // Greeting and clock text with spacing (Using Text widget)
                   Padding(
                     padding: EdgeInsets.only(top: 35, left: 15, right: 15),
-                    z-index: 1, // Added z-index for better visibility
+                    // z-index: 1, // Optional, if needed for better visibility
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        RichText(
-                          text: TextSpan(
-                            style: DefaultTextStyle.of(context).style, // Ensure no transparent color
-                            children: <TextSpan>[
-                              TextSpan(text: 'Good Morning\n', style: TextStyle(fontSize: 30, fontWeight: FontWeight.w500)),
-                              TextSpan(text: 'Daniel', style: TextStyle(fontSize: 24, color: Colors.black)),
-                            ],
+                        Text(
+                          'Good Morning,\nDaniel. Today is ${DateTime.now().toString().split(' ')[0].split('-')[2]}.${DateTime.now().toString().split(' ')[0].split('-')[1]}',
+                          style: TextStyle(
+                            fontSize: 30,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.black, // Ensure color is visible
                           ),
                         ),
                         SizedBox(height: 10), // Add spacing between texts
-                        Text(
-                          DateTime.now().toString().split(' ')[0].split('-')[2] +
-                              "." +
-                              DateTime.now().toString().split(' ')[0].split('-')[1],
-                          style: TextStyle(fontSize: 20),
-                        ),
                       ],
                     ),
                   ),
